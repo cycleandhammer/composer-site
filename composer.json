@@ -48,5 +48,8 @@
   },
   "autoload": {
     "psr-4": {"DeliciousBrains\\SpinupWPComposerSite\\": "app/"}
+  },
+  "require-dev": {
+    "laravel/homestead": "^13.0"
   }
 }

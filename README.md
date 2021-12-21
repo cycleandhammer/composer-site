@@ -1,8 +1,6 @@
-# SpinupWP Composer Site
+# WordPress Composer Site
 
-This is a WordPress site setup using Composer that is primed and ready to be hosted using [SpinupWP](https://spinupwp.com/).
-
-Inspired by Root's Bedrock and other Composer based setups.
+This is a WordPress site setup using Composer based on the [SpinupWP Composer Site](https://github.com/deliciousbrains/spinupwp-composer-site) for hosting with [SpinupWP](https://spinupwp.com/).
 
 ## Requirements
 
@@ -11,21 +9,20 @@ Inspired by Root's Bedrock and other Composer based setups.
 
 ## Installation
 
-1. Create a new project: 
-    ```sh
-    $ composer create-project deliciousbrains/spinupwp-composer-site /path/to/site/webroot
-    ```
-2. Update environment variables in the `.env` file:
-  * `DB_NAME` - Database name
-  * `DB_USER` - Database user
-  * `DB_PASSWORD` - Database password
-  * `DB_HOST` - Database host
-  * `WP_ENV` - Set to environment (`development`, `staging`, `production`)
-  * `WP_HOME` - Full URL to WordPress home (https://mysite.com)
-  * `WP_SITEURL` - Full URL to WordPress including subdirectory (https://mysite.com/wp)
-3. Add theme(s) in `public/content/themes/` as you would for a normal WordPress site
-4. Set the document root in SpinupWP's server settings to `/public`. 
-5. Access WordPress admin at `https://mysite.com/wp/wp-admin/`
+1. Create a new repository from this template repository.
+2. Add theme(s) in `public/content/themes/` as you would for a normal WordPress site
+3. Add plugins(s) in `public/content/plugins/` as you would for a normal WordPress site
 
+## Setup
 
+Run the following commands:
 
+```
+composer install
+/vendor/bin/homestead make
+```
+
+1. Set the PHP version for the `site` mapping (`php: "7.4"`) in [Homestead.yaml](/Homestead.yaml)
+3. Update `/etc/hosts` with the site domain and the ip in [Homestead.yaml](/Homestead.yaml)
+4. Update environment variables (ie `WP_HOME`) in the `.env` file
+6. Access WordPress admin at `https://mysite.com/wp/wp-admin/`
